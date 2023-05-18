@@ -1,17 +1,20 @@
 import React from "react";
 
 function NavBar() {
-  const links = ["home", "about", "projects"];
+  const links = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "projects", label: "Projects" },
+  ];
 
-  const navLinks = links.map((link, index) => {
+  const navLinks = links.map(({ id, label }) => {
     return (
-      <a key={index} href={`#${link}`}>
-        {link}
+      <a key={id} href={`#${id}`}>
+        {label}
       </a>
     );
   });
 
   return <nav>{navLinks}</nav>;
 }
-
 export default NavBar;
